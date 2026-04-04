@@ -55,21 +55,21 @@ export function ContactPage() {
       />
 
       {/* Contact Section */}
-      <section className="py-32 lg:py-48 bg-background" ref={ref}>
-        <div className="max-w-[1400px] mx-auto px-8">
-          <div className="grid lg:grid-cols-5 gap-16 lg:gap-24">
+      <section className="py-16 md:py-24 lg:py-32 xl:py-48 bg-background" ref={ref}>
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid lg:grid-cols-5 gap-12 md:gap-16 lg:gap-24">
             {/* Left: Contact Info - 2 columns */}
             <motion.div
-              className="lg:col-span-2 space-y-12"
+              className="lg:col-span-2 space-y-8 md:space-y-12"
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
               <div>
-                <h2 className="text-3xl md:text-4xl mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6">
                   Get in <span className="text-[var(--gold)]">Touch</span>
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
                   We'd love to hear about your vision. Whether you're planning a wedding, 
                   need lifestyle photography, or have a creative project in mind, reach out 
                   and let's create something beautiful together.
@@ -77,7 +77,7 @@ export function ContactPage() {
               </div>
 
               {/* Contact Details */}
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {contactInfo.map((item, index) => (
                   <motion.div
                     key={index}
@@ -89,24 +89,24 @@ export function ContactPage() {
                     {item.link ? (
                       <a 
                         href={item.link}
-                        className="flex items-start gap-5 p-6 bg-card rounded-2xl border border-border hover:border-[var(--gold)]/40 transition-all duration-300"
+                        className="flex items-start gap-3 md:gap-5 p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border hover:border-[var(--gold)]/40 transition-all duration-300"
                       >
-                        <div className="w-12 h-12 flex items-center justify-center bg-[var(--gold)]/10 rounded-xl group-hover:bg-[var(--gold)]/20 transition-colors duration-300">
-                          <item.icon className="w-5 h-5 text-[var(--gold)]" strokeWidth={1.5} />
+                        <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-[var(--gold)]/10 rounded-lg md:rounded-xl group-hover:bg-[var(--gold)]/20 transition-colors duration-300 flex-shrink-0">
+                          <item.icon className="w-4 h-4 md:w-5 md:h-5 text-[var(--gold)]" strokeWidth={1.5} />
                         </div>
-                        <div className="flex-1">
-                          <div className="text-sm text-muted-foreground mb-1 font-medium">{item.label}</div>
-                          <div className="text-base">{item.value}</div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs md:text-sm text-muted-foreground mb-1 font-medium">{item.label}</div>
+                          <div className="text-sm md:text-base break-words">{item.value}</div>
                         </div>
                       </a>
                     ) : (
-                      <div className="flex items-start gap-5 p-6 bg-card rounded-2xl border border-border">
-                        <div className="w-12 h-12 flex items-center justify-center bg-[var(--gold)]/10 rounded-xl">
-                          <item.icon className="w-5 h-5 text-[var(--gold)]" strokeWidth={1.5} />
+                      <div className="flex items-start gap-3 md:gap-5 p-4 md:p-6 bg-card rounded-xl md:rounded-2xl border border-border">
+                        <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-[var(--gold)]/10 rounded-lg md:rounded-xl flex-shrink-0">
+                          <item.icon className="w-4 h-4 md:w-5 md:h-5 text-[var(--gold)]" strokeWidth={1.5} />
                         </div>
-                        <div className="flex-1">
-                          <div className="text-sm text-muted-foreground mb-1 font-medium">{item.label}</div>
-                          <div className="text-base">{item.value}</div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs md:text-sm text-muted-foreground mb-1 font-medium">{item.label}</div>
+                          <div className="text-sm md:text-base break-words">{item.value}</div>
                         </div>
                       </div>
                     )}
@@ -116,22 +116,22 @@ export function ContactPage() {
 
               {/* Social Media */}
               <motion.div
-                className="pt-8 border-t border-border"
+                className="pt-6 md:pt-8 border-t border-border"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <h4 className="text-sm font-medium mb-6">Follow Our Journey</h4>
-                <div className="flex gap-4">
+                <h4 className="text-sm font-medium mb-4 md:mb-6">Follow Our Journey</h4>
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   {socialLinks.map((social) => (
                     <motion.a
                       key={social.name}
                       href={social.href}
-                      className="group flex items-center gap-3 px-5 py-3 bg-card border border-border rounded-xl hover:border-[var(--gold)] hover:bg-[var(--gold)]/5 transition-all duration-300"
+                      className="group flex items-center gap-3 px-4 md:px-5 py-3 bg-card border border-border rounded-xl hover:border-[var(--gold)] hover:bg-[var(--gold)]/5 transition-all duration-300"
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-[var(--gold)] transition-colors" strokeWidth={1.5} />
+                      <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-[var(--gold)] transition-colors flex-shrink-0" strokeWidth={1.5} />
                       <span className="text-sm">{social.handle}</span>
                     </motion.a>
                   ))}
@@ -146,24 +146,24 @@ export function ContactPage() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-card p-10 md:p-12 rounded-3xl border border-border shadow-xl">
-                <h3 className="text-2xl md:text-3xl mb-3">
+              <div className="bg-card p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl md:rounded-3xl border border-border shadow-xl">
+                <h3 className="text-xl sm:text-2xl md:text-3xl mb-2 md:mb-3">
                   Send Us a <span className="text-[var(--gold)]">Message</span>
                 </h3>
-                <p className="text-muted-foreground mb-10">
+                <p className="text-muted-foreground mb-8 md:mb-10 text-sm md:text-base">
                   Fill out the form below and we'll get back to you within 24 hours
                 </p>
 
-                <form className="space-y-6">
+                <form className="space-y-5 md:space-y-6">
                   {/* Name & Email Row */}
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     <div>
-                      <label className="block text-sm font-medium mb-3">
+                      <label className="block text-sm font-medium mb-2 md:mb-3">
                         Full Name <span className="text-[var(--gold)]">*</span>
                       </label>
                       <motion.input
                         type="text"
-                        className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none ${
+                        className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none text-sm md:text-base ${
                           focused === 'name' 
                             ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                             : 'border-border hover:border-[var(--gold)]/40'
@@ -176,12 +176,12 @@ export function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-3">
+                      <label className="block text-sm font-medium mb-2 md:mb-3">
                         Email Address <span className="text-[var(--gold)]">*</span>
                       </label>
                       <motion.input
                         type="email"
-                        className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none ${
+                        className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none text-sm md:text-base ${
                           focused === 'email' 
                             ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                             : 'border-border hover:border-[var(--gold)]/40'
@@ -195,14 +195,14 @@ export function ContactPage() {
                   </div>
 
                   {/* Phone & Date Row */}
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     <div>
-                      <label className="block text-sm font-medium mb-3">
+                      <label className="block text-sm font-medium mb-2 md:mb-3">
                         Phone Number
                       </label>
                       <motion.input
                         type="tel"
-                        className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none ${
+                        className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none text-sm md:text-base ${
                           focused === 'phone' 
                             ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                             : 'border-border hover:border-[var(--gold)]/40'
@@ -215,12 +215,12 @@ export function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-3">
+                      <label className="block text-sm font-medium mb-2 md:mb-3">
                         Event Date (if applicable)
                       </label>
                       <motion.input
                         type="date"
-                        className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none ${
+                        className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none text-sm md:text-base ${
                           focused === 'date' 
                             ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                             : 'border-border hover:border-[var(--gold)]/40'
@@ -234,11 +234,11 @@ export function ContactPage() {
 
                   {/* Service */}
                   <div>
-                    <label className="block text-sm font-medium mb-3">
+                    <label className="block text-sm font-medium mb-2 md:mb-3">
                       Service of Interest <span className="text-[var(--gold)]">*</span>
                     </label>
                     <motion.select
-                      className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none ${
+                      className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none text-sm md:text-base ${
                         focused === 'service' 
                           ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                           : 'border-border hover:border-[var(--gold)]/40'
@@ -259,11 +259,11 @@ export function ContactPage() {
 
                   {/* Budget */}
                   <div>
-                    <label className="block text-sm font-medium mb-3">
+                    <label className="block text-sm font-medium mb-2 md:mb-3">
                       Budget Range
                     </label>
                     <motion.select
-                      className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none ${
+                      className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none text-sm md:text-base ${
                         focused === 'budget' 
                           ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                           : 'border-border hover:border-[var(--gold)]/40'
@@ -283,12 +283,12 @@ export function ContactPage() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium mb-3">
+                    <label className="block text-sm font-medium mb-2 md:mb-3">
                       Tell Us About Your Vision <span className="text-[var(--gold)]">*</span>
                     </label>
                     <motion.textarea
                       rows={6}
-                      className={`w-full px-6 py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none resize-none ${
+                      className={`w-full px-4 md:px-6 py-3 md:py-4 bg-background border-2 rounded-xl transition-all duration-300 outline-none resize-none text-sm md:text-base ${
                         focused === 'message' 
                           ? 'border-[var(--gold)] shadow-lg shadow-[var(--gold)]/10' 
                           : 'border-border hover:border-[var(--gold)]/40'
@@ -306,7 +306,7 @@ export function ContactPage() {
                     variant="primary"
                     icon={Send}
                     fullWidth
-                    className="px-10 py-5 rounded-xl"
+                    className="px-8 md:px-10 py-4 md:py-5 rounded-xl text-sm md:text-base"
                   >
                     Send Message
                   </PremiumButton>
@@ -318,7 +318,7 @@ export function ContactPage() {
       </section>
 
       {/* Map Section - Optional */}
-      <section className="h-[500px] relative overflow-hidden">
+      <section className="h-[400px] md:h-[500px] relative overflow-hidden">
         <div className="absolute inset-0 bg-muted flex items-center justify-center">
           <div className="text-center">
             <MapPin className="w-16 h-16 text-[var(--gold)] mx-auto mb-4" strokeWidth={1.5} />
