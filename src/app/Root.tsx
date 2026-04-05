@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import { motion, useScroll, useSpring } from 'motion/react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 import { ChevronUp } from 'lucide-react';
 
 export function Root() {
@@ -40,6 +41,9 @@ export function Root() {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased">
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
+      
       {/* Progress bar - elegant gold accent */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-[var(--gold)] origin-left z-50 shadow-lg shadow-[var(--gold)]/20"
