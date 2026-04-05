@@ -85,7 +85,6 @@ export function ServicesPage() {
         titleGold="Services"
         subtitle="Comprehensive luxury photography & cinematography tailored to your vision"
         image="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80"
-        tag="What We Offer"
       />
 
       {/* Services Details Section */}
