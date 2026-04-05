@@ -51,7 +51,6 @@ export function ContactPage() {
         titleGold="Connect"
         subtitle="Ready to create something extraordinary together? We'd love to hear from you"
         image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1920&q=80"
-        tag="Get In Touch"
       />
 
       {/* Contact Section */}
