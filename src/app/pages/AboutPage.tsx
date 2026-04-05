@@ -63,7 +63,6 @@ export function AboutPage() {
         titleGold="Menaric"
         subtitle="Capturing Life's Most Precious Moments with Timeless Elegance"
         image="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1920&q=80"
-        tag="Our Story"
       />
 
       {/* Our Story Section */}
