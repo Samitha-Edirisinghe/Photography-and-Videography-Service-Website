@@ -333,7 +333,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            © 2026 Menaric Wedding Films. All rights reserved.
+            © 2026 Menaric Wedding. All rights reserved.
           </motion.p>
 
           {/* Designer credit */}
